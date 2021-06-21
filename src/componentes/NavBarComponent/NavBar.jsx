@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, NavDropdown } from "react-bootstrap";
 import CartWidget from "../CartWidgetComponent/CartWidget";
 
-const NavBar = () => {
+const NavBar = ({ cart }) => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <CartWidget />
@@ -11,6 +11,7 @@ const NavBar = () => {
                 id="responsive-navbar-nav"
                 className="justify-content-end"
             >
+                <li className="nav-item">Carrito : {cart.length}</li>
                 <NavDropdown
                     title="Accesorios"
                     id="collasible-nav-dropdown"
