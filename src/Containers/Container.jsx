@@ -10,16 +10,18 @@ const Container = () => {
         { id: 2, name: "Pulcera", price: 346, image: "collarPampaOro.JPG" },
         { id: 3, name: "Aros", price: 500, image: "arosCaracol.JPG" },
     ];
+    const addItem = () => {
+        setCart(cart + 1);
+    };
+    const deleteItem = () => {
+        setCart(cart - 1);
+    };
+    console.log(setCart);
+
     return (
         <div>
             <NavBar cart={cart} />
-            <button
-                onClick={() => {
-                    setCart([...cart, { id: 1, name: "collar rojo" }]);
-                }}
-            >
-                Agregar al carrito
-            </button>
+
             <section
                 style={{
                     display: "flex",
@@ -27,9 +29,21 @@ const Container = () => {
                     justifyContent: "space-around",
                 }}
             >
-                <ItemListComponent productData={product[0]} />
-                <ItemListComponent productData={product[1]} />
-                <ItemListComponent productData={product[2]} />
+                <ItemListComponent
+                    productData={product[0]}
+                    addItem={addItem}
+                    deleteItem={deleteItem}
+                />
+                <ItemListComponent
+                    productData={product[1]}
+                    addItem={addItem}
+                    deleteItem={deleteItem}
+                />
+                <ItemListComponent
+                    productData={product[2]}
+                    addItem={addItem}
+                    deleteItem={deleteItem}
+                />
             </section>
         </div>
     );
