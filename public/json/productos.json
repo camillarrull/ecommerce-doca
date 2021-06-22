@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "name": "Collar Dorado",
+        "price": 600,
+        "image": "arosAbeja.JPG"
+    },
+    { "id": 2, "name": "Pulcera", "price": 346, "image": "collarPampaOro.JPG" },
+    { "id": 3, "name": "Aros", "price": 500, "image": "arosCaracol.JPG" },
+    {
+        "id": "4",
+        "name": "Aros Gancho",
+        "price": "500",
+        "image": "arosGancho.jpeg"
+    },
+    {
+        "id": "5",
+        "name": "collar Strass",
+        "price": "800",
+        "image": "collarStrass.JPG"
+    },
+    {
+        "id": "6",
+        "name": "Aros Color",
+        "price": "1500",
+        "image": "arosColor.JPG"
+    }
+]

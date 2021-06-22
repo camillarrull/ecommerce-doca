@@ -1,6 +1,5 @@
 import { React } from "react";
-import { Card, Button } from "react-bootstrap";
-import ItemCount from "../ItemCount/ItemCount";
+import Items from "../ItemComponent/Item";
 
 // ESTO ES DESTRUCTURACION DE OBJETO. SERIA LO MISMO QUE HACER
 //const CardComponent = (props)=>{
@@ -18,27 +17,10 @@ import ItemCount from "../ItemCount/ItemCount";
 )
 }
  */
-const ItemListComponent = ({ productData, addItem, deleteItem }) => {
+const ItemListComponent = () => {
     return (
         <div>
-            <Card style={{ width: "18rem" }}>
-                <Card.Img
-                    variant="top"
-                    src={"/images/" + productData.image}
-                    alt="aros"
-                />
-                <Card.Body>
-                    <Card.Title>{productData.name}</Card.Title>
-                    <Card.Text>{productData.price}</Card.Text>
-                    <ItemCount stock="5" initial="1" />
-                    <Button variant="primary" onClick={addItem}>
-                        Comprar
-                    </Button>
-                    <Button variant="secondary" onClick={deleteItem}>
-                        Eliminar
-                    </Button>
-                </Card.Body>
-            </Card>
+            <Items />
         </div>
     );
 };
