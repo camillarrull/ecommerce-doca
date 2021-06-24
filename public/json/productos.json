@@ -3,26 +3,42 @@
         "id": 1,
         "name": "Collar Dorado",
         "price": 600,
-        "image": "arosAbeja.JPG"
+        "image": "arosAbeja.JPG",
+        "stock": 5
     },
-    { "id": 2, "name": "Pulcera", "price": 346, "image": "collarPampaOro.JPG" },
-    { "id": 3, "name": "Aros", "price": 500, "image": "arosCaracol.JPG" },
+    {
+        "id": 2,
+        "name": "Pulcera",
+        "price": 346,
+        "image": "collarPampaOro.JPG",
+        "stock": 6
+    },
+    {
+        "id": 3,
+        "name": "Aros",
+        "price": 500,
+        "image": "arosCaracol.JPG",
+        "stock": 9
+    },
     {
         "id": "4",
         "name": "Aros Gancho",
         "price": "500",
-        "image": "arosGancho.jpeg"
+        "image": "arosGancho.jpeg",
+        "stock": 6
     },
     {
         "id": "5",
         "name": "collar Strass",
         "price": "800",
-        "image": "collarStrass.JPG"
+        "image": "collarStrass.JPG",
+        "stock": 3
     },
     {
         "id": "6",
         "name": "Aros Color",
         "price": "1500",
-        "image": "arosColor.JPG"
+        "image": "arosColor.JPG",
+        "stock": 2
     }
 ]

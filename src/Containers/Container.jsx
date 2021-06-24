@@ -1,24 +1,20 @@
 import { React, useState } from "react";
-//import ItemListComponent from "../componentes/ItemListComponeny/ItemListComponent";
 import NavBar from ".././componentes/NavBarComponent/NavBar";
-import Items from "../componentes/ItemComponent/Item";
+//import Items from "../componentes/ItemComponent/Item";
+import ItemListContainer from "../Containers/ItemListContainer";
 
+//esto se llama en app
 const Container = () => {
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(0);
     console.log(cart);
 
-    const addItem = () => {
-        setCart(cart + 1);
-    };
-    const deleteItem = () => {
-        setCart(cart - 1);
-    };
     console.log(setCart);
 
     return (
         <div>
             <NavBar cart={cart} />
-            <Items addItem={addItem} deleteItem={deleteItem} />
+            {/* <Items addItem={addItem} deleteItem={deleteItem} /> */}
+            <ItemListContainer setCart={setCart} cart={cart} />
         </div>
     );
 };

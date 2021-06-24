@@ -1,10 +1,24 @@
-import React from "react";
-import ItemListComponent from "../componentes/ItemListComponeny/ItemListComponent";
+import { React, useState, useEffect } from "react";
+import ItemListComponent from "../componentes/ItemListComponent/ItemListComponent";
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch("json/productos.json")
+            .then((response) => response.json())
+            .then((datos) => {
+                setProducts(datos);
+            });
+    }, []);
+
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
-            <ItemListComponent />
+            <ItemListComponent
+                products={products}
+                setCart={props.setCart}
+                cart={props.cart}
+            />
         </div>
     );
 };

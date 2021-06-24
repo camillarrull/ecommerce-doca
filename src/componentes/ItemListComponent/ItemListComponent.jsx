@@ -1,5 +1,5 @@
 import { React } from "react";
-import Items from "../ItemComponent/Item";
+import Items from "../ItemComponent/ItemComponent";
 
 // ESTO ES DESTRUCTURACION DE OBJETO. SERIA LO MISMO QUE HACER
 //const CardComponent = (props)=>{
@@ -17,10 +17,20 @@ import Items from "../ItemComponent/Item";
 )
 }
  */
-const ItemListComponent = () => {
+const ItemListComponent = (props) => {
     return (
-        <div>
-            <Items />
+        <div
+            style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between",
+                padding: "0px",
+                margin: "10px",
+            }}
+        >
+            {props.products.map((item) => (
+                <Items item={item} setCart={props.setCart} cart={props.cart} />
+            ))}
         </div>
     );
 };
