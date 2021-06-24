@@ -29,7 +29,12 @@ const ItemListComponent = (props) => {
             }}
         >
             {props.products.map((item) => (
-                <Items item={item} setCart={props.setCart} cart={props.cart} />
+                <Items
+                    item={item}
+                    setCart={props.setCart}
+                    cart={props.cart}
+                    key={item.id}
+                />
             ))}
         </div>
     );

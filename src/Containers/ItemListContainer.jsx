@@ -8,7 +8,9 @@ const ItemListContainer = (props) => {
         fetch("json/productos.json")
             .then((response) => response.json())
             .then((datos) => {
-                setProducts(datos);
+                setTimeout(() => {
+                    setProducts(datos);
+                }, 2000);
             });
     }, []);
 
