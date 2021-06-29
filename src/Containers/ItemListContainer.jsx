@@ -10,7 +10,7 @@ const ItemListContainer = (props) => {
             .then((datos) => {
                 setTimeout(() => {
                     setProducts(datos);
-                }, 2000);
+                }, 1000);
             });
     }, []);
 

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
+//import ItemDetailComponent from "../ItemDetailComponent/ItemDetailComponent";
 //import ItemCount from "../ItemCount/ItemCount";
+import ItemDetailContainer from "../../Containers/ItemDetailContainer";
 
-const Items = (props) => {
+const ItemComponent = (props) => {
     const [articulos, setArticulos] = useState(0);
 
     console.log(props.item);
@@ -41,19 +43,13 @@ const Items = (props) => {
                     <Card.Body
                         style={{ display: "flex", flexDirection: "column" }}
                     >
-                        <Card.Title
-                            style={{ margin: "1px", textAlign: "center" }}
-                        >
-                            {props.item.name}
-                        </Card.Title>
+                        <ItemDetailContainer itemId={props.item.id} />
                         <Card.Text
                             style={{ margin: "1px", textAlign: "center" }}
                         >
                             ${props.item.price}
                         </Card.Text>
-                        <Card.Text style={{ margin: "1px", fontSize: "small" }}>
-                            Stock: {props.item.stock} unidades
-                        </Card.Text>
+
                         <div style={{ display: "flex" }}>
                             <Button
                                 variant="primary"
@@ -76,4 +72,4 @@ const Items = (props) => {
         </div>
     );
 };
-export default Items;
+export default ItemComponent;
