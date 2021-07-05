@@ -1,8 +1,8 @@
 import { React } from "react";
 
-import ItemComponent from "../ItemComponent/ItemComponent";
+import ArosComponent from "../ArosComponent/ArosComponent";
 
-const ItemListComponent = (props) => {
+const ArosListComponent = (props) => {
     return (
         <div
             style={{
@@ -16,14 +16,14 @@ const ItemListComponent = (props) => {
             }}
         >
             {props.products.map((item) => (
-                <ItemComponent
+                <ArosComponent
                     item={item}
                     setCart={props.setCart}
                     cart={props.cart}
-                    key={item.product_id}
+                    key={item.id}
                 />
             ))}
         </div>
     );
 };
-export default ItemListComponent;
+export default ArosListComponent;

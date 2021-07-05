@@ -1,20 +1,42 @@
 import { React, useState, useEffect } from "react";
 import ItemDetailComponent from "../componentes/ItemDetailComponent/ItemDetailComponent";
+import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = (props) => {
-    const [item, setItem] = useState();
+const ItemDetailContainer = () => {
+    const { product_id } = useParams();
+    const [item, setItem] = useState([]);
+    /*   useEffect(() => {
+          fetch("json/productos.json")
+              .then((response) => response.json())
+              .then((datos) => {
+                  setItem(datos.find((element) => element.id === product_id));
+              });
+      }, [product_id]); */
+
+    /*  useEffect(() => {
+         const fetchJSON = async () => {
+             const response = await fetch(`json/productos.json/${product_id}`);
+             let json = await response.json();
+             setItem(json);
+         };
+         fetchJSON();
+     }, [product_id]);   */
 
     useEffect(() => {
-        fetch("json/productos.json")
+        fetch(`json/productos.json/${product_id}`)
             .then((response) => response.json())
             .then((datos) => {
-                setItem(datos.find((element) => element.id === props.itemId));
+                setItem(datos);
             });
-    }, [props.itemId]);
-
+    }, [product_id]);
+    console.log("hola" + item);
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
-            {item ? <ItemDetailComponent item={item} /> : null}
+            {item.status === 400 ? (
+                <p>Item no encontrado</p>
+            ) : (
+                <ItemDetailComponent item={item} />
+            )}
         </div>
     );
 };

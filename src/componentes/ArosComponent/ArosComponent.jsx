@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
-//import ItemDetailComponent from "../ItemDetailComponent/ItemDetailComponent";
-//import ItemCount from "../ItemCount/ItemCount";
-//import ItemDetailContainer from "../../Containers/ItemDetailContainer";
-import { Link } from "react-router-dom";
 
-const ItemComponent = (props) => {
+import ItemDetailContainer from "../../Containers/ItemDetailContainer";
+
+const ArosComponent = (props) => {
     const [articulos, setArticulos] = useState(0);
 
     console.log(props.item);
@@ -37,16 +35,15 @@ const ItemComponent = (props) => {
                 }}
             >
                 <Card style={{ width: "16rem", height: "31rem" }}>
-                    <Link to={"/productos/" + props.item.product_id}>
-                        <Card.Img
-                            variant="top"
-                            src={"/images/" + props.item.image}
-                            alt="aros"
-                        />
-                    </Link>
+                    <Card.Img
+                        variant="top"
+                        src={"/images/" + props.item.image}
+                        alt="aros"
+                    />
                     <Card.Body
                         style={{ display: "flex", flexDirection: "column" }}
                     >
+                        <ItemDetailContainer itemId={props.item.id} />
                         <Card.Text
                             style={{ margin: "1px", textAlign: "center" }}
                         >
@@ -75,4 +72,4 @@ const ItemComponent = (props) => {
         </div>
     );
 };
-export default ItemComponent;
+export default ArosComponent;

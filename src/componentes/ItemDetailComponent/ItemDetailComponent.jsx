@@ -1,14 +1,32 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-function ItemDetailComponent(props) {
-    const [show, setShow] = useState(false);
+function ItemDetailComponent({ item }) {
+    /*   const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = () => setShow(true); */
 
     return (
-        <>
+        <div>
+            <div style={{ width: "60%" }}>
+                <img
+                    variant="top"
+                    src={"/images/" + item.image}
+                    alt="aros"
+                    style={{ display: "flex", width: "100%" }}
+                />
+            </div>
+            <div style={{ width: "40%" }}>
+                <p>Precio : ${item.price}</p>
+                <p>Stock :{item.stock} unidades</p>
+                <p>
+                    Descripcion:
+                    {item.description}
+                </p>
+            </div>
+        </div>
+        /*  <>
             <Button variant="primary" onClick={handleShow}>
                 {props.item.name}
             </Button>
@@ -49,7 +67,7 @@ function ItemDetailComponent(props) {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </>
+        </> */
     );
 }
 

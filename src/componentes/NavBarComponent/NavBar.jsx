@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, NavDropdown } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import CartWidget from "../CartWidgetComponent/CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ cart }) => {
     return (
@@ -11,8 +12,28 @@ const NavBar = ({ cart }) => {
                 id="responsive-navbar-nav"
                 className="justify-content-end"
             >
+                <Link to="/aros">
+                    <li
+                        className="nav-item"
+                        style={{ listStyle: "none", margin: "10px" }}
+                    >
+                        Aros
+                    </li>
+                </Link>
+                <li
+                    className="nav-item"
+                    style={{ listStyle: "none", margin: "10px" }}
+                >
+                    Collares
+                </li>
+                <li
+                    className="nav-item"
+                    style={{ listStyle: "none", margin: "10px" }}
+                >
+                    Pulceras
+                </li>
                 <li className="nav-item">Carrito : {cart}</li>
-                <NavDropdown
+                {/* <NavDropdown
                     title="Accesorios"
                     id="collasible-nav-dropdown"
                     className="justify-content-end"
@@ -27,7 +48,7 @@ const NavBar = ({ cart }) => {
                     <NavDropdown.Item href="#action/3.4">
                         Holders
                     </NavDropdown.Item>
-                </NavDropdown>
+                </NavDropdown> */}
             </Navbar.Collapse>
         </Navbar>
     );

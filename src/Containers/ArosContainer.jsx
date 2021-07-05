@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
-import ItemListComponent from "../componentes/ItemListComponent/ItemListComponent";
-import { Link } from "react-router-dom";
-const ItemListContainer = (props) => {
+//import ItemDetailComponent from "../componentes/ItemDetailComponent/ItemDetailComponent";
+import ArosListComponent from "../componentes/ArosComponent/ArosComponent";
+
+const ArosContainer = (props) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -18,15 +19,12 @@ const ItemListContainer = (props) => {
         <div
             style={{ display: "flex", flexDirection: "column", width: "100%" }}
         >
-            <ItemListComponent
+            <ArosListComponent
                 products={products}
                 setCart={props.setCart}
                 cart={props.cart}
             />
-            <button>
-                <Link to={"/contacto"}>IR A CONTACTO</Link>
-            </button>
         </div>
     );
 };
-export default ItemListContainer;
+export default ArosContainer;
