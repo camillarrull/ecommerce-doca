@@ -6,7 +6,7 @@
         "image": "arosAbeja.JPG",
         "stock": 5,
         "description": "Argollas 1,5 cm de diámetro. Dije de abeja de 3 cm de ancho x 2cm de alto. Baño de oro 18 K",
-        "category": "aros"
+        "aros": "aros"
     },
     {
         "product_id": 2,
@@ -24,19 +24,19 @@
         "image": "arosCaracol.JPG",
         "stock": 9,
         "description": "Argollas de plata 925 bañadas en oro 18 K de 1,3 cm de diámetro, con dije de caracol fundido y bañado en oro + perla de río cultivadas.",
-        "category": "aros"
+        "aros": "aros"
     },
     {
-        "product_id": "4",
+        "product_id": 4,
         "name": "Aros Cane",
         "price": "500",
         "image": "arosGancho.jpeg",
         "stock": 6,
         "description": "Aros 3 cm de largo. Baño de oro.",
-        "category": "aros"
+        "aros": "aros"
     },
     {
-        "product_id": "5",
+        "product_id": 5,
         "name": "Collar Ravello-Cristal",
         "price": "800",
         "image": "collarStrass.JPG",
@@ -45,16 +45,16 @@
         "category": "collar"
     },
     {
-        "product_id": "6",
+        "product_id": 6,
         "name": "Aros Santa Teresa",
         "price": "1500",
         "image": "arosColor.JPG",
         "stock": 2,
         "description": "Argolla bañada en oro 18 K con cristales de color.",
-        "category": "aros"
+        "aros": "aros"
     },
     {
-        "product_id": "7",
+        "product_id": 7,
         "name": "Collar Al Capone",
         "price": "1500",
         "image": "collarAlCapone.JPG",
@@ -63,7 +63,7 @@
         "category": "collar"
     },
     {
-        "product_id": "8",
+        "product_id": 8,
         "name": "Argollas Wategos",
         "price": "1500",
         "image": "ArosWategos.JPG",
@@ -72,7 +72,7 @@
         "category": "collar"
     },
     {
-        "product_id": "9",
+        "product_id": 9,
         "name": "Collar Cinque Terre Oro",
         "price": "1500",
         "image": "collarCinqueOro.JPG",
@@ -81,7 +81,7 @@
         "category": "collar"
     },
     {
-        "id": "10",
+        "product_id": 10,
         "name": "Pulcera Pampa",
         "price": "1500",
         "image": "PulceraPampa.JPG",

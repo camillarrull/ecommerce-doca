@@ -4,7 +4,8 @@ import NavBar from './componentes/NavBarComponent/NavBar'
 import ItemListContainer from "./Containers/ItemListContainer";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ContactContainer from './Containers/ContactContainer';
-import ItemDetailContainer from './Containers/ItemDetailContainer'
+import ItemDetailContainer from './Containers/ItemDetailContainer';
+
 
 
 
@@ -31,6 +32,7 @@ function App() {
                     <Route exact path='/productos/:product_id'>
                         <ItemDetailContainer />
                     </Route>
+
                 </Switch>
 
 

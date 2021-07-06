@@ -5,13 +5,27 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
     const { product_id } = useParams();
     const [item, setItem] = useState([]);
+
+    useEffect(() => {
+        fetch("/json/productos.json")
+            .then((res) => res.json())
+            .then((data) => {
+                data.forEach((elem) => {
+                    if (elem.product_id === parseInt(product_id)) {
+                        setItem(elem);
+                    }
+                });
+            });
+    }, [product_id]);
     /*   useEffect(() => {
-          fetch("json/productos.json")
-              .then((response) => response.json())
-              .then((datos) => {
-                  setItem(datos.find((element) => element.id === product_id));
-              });
-      }, [product_id]); */
+        fetch("json/productos.json/")
+            .then((response) => response.json())
+            .then((datos) => {
+                setItem(datos.find((element) => element.id === product_id));
+                //console.log("hola" + datos);
+                console.log(item);
+            });
+    }, [product_id]); */
 
     /*  useEffect(() => {
          const fetchJSON = async () => {
@@ -22,14 +36,14 @@ const ItemDetailContainer = () => {
          fetchJSON();
      }, [product_id]);   */
 
-    useEffect(() => {
+    /*    useEffect(() => {
         fetch(`json/productos.json/${product_id}`)
             .then((response) => response.json())
             .then((datos) => {
                 setItem(datos);
             });
     }, [product_id]);
-    console.log("hola" + item);
+    console.log("hola" + item); */
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
             {item.status === 400 ? (
