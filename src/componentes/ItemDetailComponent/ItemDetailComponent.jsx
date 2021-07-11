@@ -1,21 +1,17 @@
-import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
-
+import React from "react";
+import "./style.css";
+import { Button } from "react-bootstrap";
 function ItemDetailComponent({ item }) {
-    /*   const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true); */
-
     return (
-        <div>
-            <div style={{ width: "60%" }}>
-                <img
-                    variant="top"
-                    src={"/images/" + item.image}
-                    alt="aros"
-                    style={{ display: "flex", width: "100%" }}
-                />
+        /*   <div>
+            <div className="contenedorFoto">
+              
+            </div>
+            <div>
+                
+            </div>
+            <div>
+               
             </div>
             <div style={{ width: "40%" }}>
                 <p>Precio : ${item.price}</p>
@@ -26,48 +22,125 @@ function ItemDetailComponent({ item }) {
                 </p>
             </div>
         </div>
-        /*  <>
-            <Button variant="primary" onClick={handleShow}>
-                {props.item.name}
-            </Button>
+       
+         */
 
-            <Modal
-                show={show}
-                onHide={handleClose}
+        /*   <Carousel fade style={{ width: "50%", display: "flex" }}>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={"/images/" + item.image}
+                    alt="aros"
+                />
+                <Carousel.Caption>
+                    <h3>{item.name}</h3>
+                    <p>{item.description}</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item style={{ display: "flex" }}>
+                <img
+                    className="d-flex w-auto"
+                    alt="aros"
+                    src={"/images/" + item.image2}
+                />
+
+                <Carousel.Caption>
+                    <h3>{item.name}</h3>
+                    <p>{item.description}</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    alt="aros"
+                    src={"/images/" + item.image3}
+                />
+
+                <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl
+                        consectetur.
+                    </p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        </Carousel> */
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+            }}
+        >
+            <h1
                 style={{
-                    display: "flex",
-                    //flexDirection: "column",
-                    height: "50rem",
+                    color: "black",
+                    alignSelf: "center",
+                    marginTop: "5%",
+                    color: "#a69f91",
+                    fontStyle: "italic",
                 }}
             >
-                <Modal.Header closeButton>
-                    <Modal.Title>{props.item.name}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body style={{ display: "flex" }}>
-                    <div style={{ width: "60%" }}>
+                {item.name}
+            </h1>
+            <div
+                style={{
+                    width: "55rem",
+                    height: "32rem",
+                    backgroundColor: "#efe7d6",
+                    border: "solid 1px",
+                    marginBottom: "5%",
+                    marginTop: "5%",
+                    display: "flex",
+                    flexDirection: "row",
+                }}
+            >
+                <div style={{ width: "100%", height: "100%", display: "flex" }}>
+                    <div style={{ width: "50%", height: "100%" }}>
                         <img
-                            variant="top"
-                            src={"/images/" + props.item.image}
-                            alt="aros"
-                            style={{ display: "flex", width: "100%" }}
+                            src={"/images/" + item.image}
+                            alt="aro"
+                            style={{ width: "100%", height: "100%" }}
                         />
                     </div>
-                    <div style={{ width: "40%" }}>
-                        <p>Precio : ${props.item.price}</p>
-                        <p>Stock :{props.item.stock} unidades</p>
-                        <p>
-                            Descripcion:
-                            {props.item.description}
+
+                    <div
+                        style={{
+                            width: "50%",
+                            height: "100%",
+                            padding: "10%",
+                            display: "flex",
+                            flexDirection: "column",
+                        }}
+                    >
+                        <h5>{item.description}</h5>
+                        <p style={{ alignSelf: "center" }}>
+                            Stock : {item.stock}
                         </p>
+                        <h3 style={{ alignSelf: "center" }}> $ {item.price}</h3>
+                        <Button
+                            style={{
+                                backgroundColor: "#a69f91",
+                                borderColor: "#a69f91",
+                                marginTop: "30%",
+                            }}
+                        >
+                            Comprar
+                        </Button>
                     </div>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-        </> */
+                </div>
+                {/*  <div style={{ width: "100%", height: "100%", display: "flex" }}>
+                    <div>
+                        <img src={"/images/" + item.image} alt="aro" />
+                    </div>
+                    <div>
+                        <img src={"/images/" + item.image2} alt="aro" />
+                    </div>
+                    <div>
+                        <img src={"/images/" + item.image3} alt="aro" />
+                    </div>
+                </div> */}
+            </div>
+        </div>
     );
 }
 

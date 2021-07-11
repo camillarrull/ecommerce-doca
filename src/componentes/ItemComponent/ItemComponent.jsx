@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
-//import ItemDetailComponent from "../ItemDetailComponent/ItemDetailComponent";
-//import ItemCount from "../ItemCount/ItemCount";
-//import ItemDetailContainer from "../../Containers/ItemDetailContainer";
 import { Link } from "react-router-dom";
 
 const ItemComponent = (props) => {
     const [articulos, setArticulos] = useState(0);
-
-    console.log(props.item);
 
     const addItem = () => {
         if (articulos < props.item.stock) {
             setArticulos(articulos + 1);
             props.setCart(props.cart + 1); //aca guardo el numero de articulos
         } else alert("NO HAY MAS!");
-        console.log(articulos);
     };
     //PASAR CART HASTA ACA Y HACER CART + 1
     const deleteItem = () => {
@@ -23,7 +17,6 @@ const ItemComponent = (props) => {
             setArticulos(articulos - 1);
             props.setCart(props.cart - 1);
         }
-        console.log(articulos);
     };
 
     return (
@@ -57,14 +50,26 @@ const ItemComponent = (props) => {
                             <Button
                                 variant="primary"
                                 onClick={addItem}
-                                style={{ margin: "10px", width: "50%" }}
+                                style={{
+                                    margin: "10px",
+                                    width: "50%",
+                                    backgroundColor: "#a69f91",
+                                    borderColor: "#a69f91",
+                                    marginTop: "20%",
+                                }}
                             >
                                 Comprar
                             </Button>
                             <Button
                                 variant="primary"
                                 onClick={deleteItem}
-                                style={{ margin: "10px", width: "50%" }}
+                                style={{
+                                    margin: "10px",
+                                    width: "50%",
+                                    backgroundColor: "#a69f91",
+                                    borderColor: "#a69f91",
+                                    marginTop: "20%",
+                                }}
                             >
                                 Eliminar
                             </Button>

@@ -12,7 +12,7 @@ const NavBar = ({ cart }) => {
                 id="responsive-navbar-nav"
                 className="justify-content-end"
             >
-                <Link to="/aros">
+                <Link to="/category/aros" replace>
                     <li
                         className="nav-item"
                         style={{ listStyle: "none", margin: "10px" }}
@@ -20,18 +20,22 @@ const NavBar = ({ cart }) => {
                         Aros
                     </li>
                 </Link>
-                <li
-                    className="nav-item"
-                    style={{ listStyle: "none", margin: "10px" }}
-                >
-                    Collares
-                </li>
-                <li
-                    className="nav-item"
-                    style={{ listStyle: "none", margin: "10px" }}
-                >
-                    Pulceras
-                </li>
+                <Link to="/category/collar" replace>
+                    <li
+                        className="nav-item"
+                        style={{ listStyle: "none", margin: "10px" }}
+                    >
+                        Collares
+                    </li>
+                </Link>
+                <Link to="/category/pulsera" replace>
+                    <li
+                        className="nav-item"
+                        style={{ listStyle: "none", margin: "10px" }}
+                    >
+                        Pulseras
+                    </li>
+                </Link>
                 <li className="nav-item">Carrito : {cart}</li>
                 {/* <NavDropdown
                     title="Accesorios"

@@ -1,31 +1,42 @@
 import { React, useState, useEffect } from "react";
 import ItemListComponent from "../componentes/ItemListComponent/ItemListComponent";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const { product } = useParams();
 
     useEffect(() => {
-        fetch("json/productos.json")
-            .then((response) => response.json())
-            .then((datos) => {
-                setTimeout(() => {
-                    setProducts(datos);
-                }, 1000);
-            });
+        console.log(product);
+        const getItems = async () => {
+            const response = await fetch("json/productos.json");
+            let data = await response.json();
+
+            setProducts(data);
+            setFilteredProducts(data);
+        };
+
+        getItems();
     }, []);
+
+    useEffect(() => {
+        if (product) {
+            setFilteredProducts(products.filter((e) => e.category === product));
+        } else {
+            setFilteredProducts(products);
+        }
+    }, [product]);
 
     return (
         <div
             style={{ display: "flex", flexDirection: "column", width: "100%" }}
         >
             <ItemListComponent
-                products={products}
+                products={filteredProducts}
                 setCart={props.setCart}
                 cart={props.cart}
             />
-            <button>
-                <Link to={"/contacto"}>IR A CONTACTO</Link>
-            </button>
         </div>
     );
 };

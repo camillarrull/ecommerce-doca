@@ -45,7 +45,12 @@ const ItemDetailContainer = () => {
     }, [product_id]);
     console.log("hola" + item); */
     return (
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "center",
+            }}
+        >
             {item.status === 400 ? (
                 <p>Item no encontrado</p>
             ) : (
