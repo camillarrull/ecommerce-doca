@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ItemCountComponent from "../ItemCountComponent/ItemCountComponent";
 
 const ItemComponent = (props) => {
     const [articulos, setArticulos] = useState(0);
@@ -45,8 +46,12 @@ const ItemComponent = (props) => {
                         >
                             ${props.item.price}
                         </Card.Text>
+                        <ItemCountComponent
+                            addItem={addItem}
+                            deleteItem={deleteItem}
+                        />
 
-                        <div style={{ display: "flex" }}>
+                        {/* <div style={{ display: "flex" }}>
                             <Button
                                 variant="primary"
                                 onClick={addItem}
@@ -73,7 +78,7 @@ const ItemComponent = (props) => {
                             >
                                 Eliminar
                             </Button>
-                        </div>
+                        </div> */}
                     </Card.Body>
                 </Card>
             </div>
