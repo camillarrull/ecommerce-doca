@@ -1,0 +1,46 @@
+[
+    {
+        "id": 0,
+        "question": "Quien es el mejor profe?",
+        "answers": {
+            "a": "Camila",
+            "b": "Agustin",
+            "c": "Rafael"
+        },
+        "correctAnswer": "b"
+
+    },
+     {
+        "id": 1,
+        "question": "Como se llama el futuro perro de Agus?",
+        "answers": {
+            "a": "Falopa",
+            "b": "Agustin",
+            "c": "Rafael"
+        },
+        "correctAnswer": "a"
+
+    },
+     {
+        "id": 2,
+        "question": "A quien va a ver Caro el jueves?",
+        "answers": {
+            "a": "Camila",
+            "b": "Babasonicos",
+            "c": "Rafael"
+        },
+        "correctAnswer": "b"
+
+    },
+     {
+        "id": 3,
+        "question": "A donde nos vamos en marzo?",
+        "answers": {
+            "a": "Japon",
+            "b": "Agustin",
+            "c": "Rafael"
+        },
+        "correctAnswer": "a"
+
+    }
+]

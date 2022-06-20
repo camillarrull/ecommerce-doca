@@ -37,22 +37,6 @@ const NavBar = ({ cart }) => {
                     </li>
                 </Link>
                 <li className="nav-item">Carrito : {cart}</li>
-                {/* <NavDropdown
-                    title="Accesorios"
-                    id="collasible-nav-dropdown"
-                    className="justify-content-end"
-                >
-                    <NavDropdown.Item href="#action/3.1">Aros</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
-                        Collares
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">
-                        Pulceras
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.4">
-                        Holders
-                    </NavDropdown.Item>
-                </NavDropdown> */}
             </Navbar.Collapse>
         </Navbar>
     );
