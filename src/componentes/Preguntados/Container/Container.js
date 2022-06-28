@@ -1,6 +1,9 @@
 import React from "react"
 import "./container.modules.css";
-import questionsData from "../data.json"
+import questionsData from "../data.json";
+import { PreGame } from "../views/PreGame/PreGame";
+import { PostGame } from "../views/PostGame/PostGame";
+import { DuringGame } from "../views/DuringGame/DuringGame";
 
 //INFORMACION QUE VAMOS A ALMACENAR ACA: 
 //1) un estado que cuando inicia la partida se traiga 10 preguntas random no repetidas
@@ -12,11 +15,12 @@ import questionsData from "../data.json"
 
 
 const Container = () => {
-    const [randomQuestions, setRandomQuestions] = React.useState([])
-    React.useEffect(() => {
+    const [gameStatus, setGameStatus] = React.useState('preGame')
+    const [randomQuestions, setRandomQuestions] = React.useState([]);
+    const initialData = () => {
         let preguntasSeleccionadasAux = [] //variable auxiliar
         let indexSeleccionados = [] 
-        while (preguntasSeleccionadasAux.length < 3) {
+        while (preguntasSeleccionadasAux.length < 10) {
             let questionDataLength = questionsData.length
             let randomIndex = Math.floor(Math.random() * questionDataLength)
             let selectedQuestion = questionsData[randomIndex]
@@ -27,20 +31,29 @@ const Container = () => {
             
         }
         setRandomQuestions(preguntasSeleccionadasAux)
+    }
+    const changeGameStatus = (status) => {
+        setGameStatus(status)
+    }
+    React.useEffect(() => {
+        initialData()
     }, [])
     return (
-        <div className='background'>
-            <p>holus</p>
+        <div id="container">
             {
-                randomQuestions.map(question => {
-                    return (
-                        <div>
-                            <p>{question.question}</p>
-                        </div>
-                        
-                    )
-                }
-                )
+                // (gameStatus === 'preGame') && <PreGame/>
+
+                // Ternario : condicion ? accion (en caso de q la condicion sea positiva) : (condition false action)
+                
+                (gameStatus === 'preGame') ?
+                    <PreGame
+                        changeGameStatus={changeGameStatus}
+                    />
+                : (gameStatus === 'duringGame') ?
+                    <DuringGame
+                        randomQuestions={randomQuestions}
+                    />
+                : <PostGame />
             }
         </div>
     )

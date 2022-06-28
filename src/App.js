@@ -26,7 +26,7 @@ function App() {
         <ShopContext.Provider >
             <BrowserRouter >
                 <div>
-                    <NavBar cart={cart} />
+                    {/* <NavBar cart={cart} /> */}
                     <Switch >
                         <Route exact path='/' >
                             <ItemListContainer setCart={setCart} cart={cart} />
