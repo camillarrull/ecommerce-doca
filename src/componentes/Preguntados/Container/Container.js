@@ -17,6 +17,7 @@ import { DuringGame } from "../views/DuringGame/DuringGame";
 const Container = () => {
     const [gameStatus, setGameStatus] = React.useState('preGame')
     const [randomQuestions, setRandomQuestions] = React.useState([]);
+    const [resultadoRta, setResultadoRta] = React.useState(0)
     const initialData = () => {
         let preguntasSeleccionadasAux = [] //variable auxiliar
         let indexSeleccionados = [] 
@@ -51,9 +52,15 @@ const Container = () => {
                     />
                 : (gameStatus === 'duringGame') ?
                     <DuringGame
-                        randomQuestions={randomQuestions}
+                            randomQuestions={randomQuestions}
+                            resultadoRta={resultadoRta}
+                            setResultadoRta={setResultadoRta}
+                            changeGameStatus={changeGameStatus}
                     />
-                : <PostGame />
+                :   <PostGame
+                        resultadoRta={resultadoRta}
+                        changeGameStatus={changeGameStatus}    
+                    />
             }
         </div>
     )
