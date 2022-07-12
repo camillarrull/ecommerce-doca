@@ -58,8 +58,10 @@ const Container = () => {
                             changeGameStatus={changeGameStatus}
                     />
                 :   <PostGame
-                        resultadoRta={resultadoRta}
-                        changeGameStatus={changeGameStatus}    
+                            resultadoRta={resultadoRta}
+                            setResultadoRta={setResultadoRta}
+                            changeGameStatus={changeGameStatus}
+                        initialData={initialData}    
                     />
             }
         </div>
@@ -68,3 +70,5 @@ const Container = () => {
 
 export default Container
 
+//MOSTRAR EL MAXIMO DE PUNTUACION Y LO DE CATEGORIAS
+//ESTILAR BIEN ESTO

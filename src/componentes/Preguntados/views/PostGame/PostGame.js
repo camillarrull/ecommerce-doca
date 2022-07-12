@@ -1,9 +1,11 @@
 import React from "react"
 import "./postGame.modules.css"
 
-export const PostGame = ({ resultadoRta, changeGameStatus }) => {
+export const PostGame = ({ resultadoRta, changeGameStatus, setResultadoRta, initialData }) => {
     const changeStatus = () => {
+        setResultadoRta(0)
         changeGameStatus('preGame')
+        initialData()
     }
     return (
         <div>
@@ -13,5 +15,3 @@ export const PostGame = ({ resultadoRta, changeGameStatus }) => {
         </div>
     )
 }
-
-//TAREA: QUE MUESTRE CUANTAS RESPONDI  O SEA TRAERME RESULTADORTA QUE ESTA EN EL CONTAINER Y VOLVER A JUGAR : VOLVER A CAMBIAR EL ESTADO A PREGAME
